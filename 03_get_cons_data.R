@@ -17,20 +17,17 @@ consultants <- gs_title(consultants_name) %>%
 
 # Rename columns ----------------------------------------------------
 
-consultants_col_names <- names(consultants)
-
-consultants_col_names <- str_replace(consultants_col_names, "Email address", "email")
-consultants_col_names <- str_replace(consultants_col_names, "Your affiliation: .{1,}", "affiliation")
-consultants_col_names <- str_replace(consultants_col_names, "Your title:", "title")
-consultants_col_names <- str_replace(consultants_col_names, "Which .{1,}", "shift_preference")
-consultants_col_names <- str_replace(consultants_col_names, "How many .{1,}", "hours_preference")
-consultants_col_names <- str_replace(consultants_col_names, "Check if you agree", "photo")
-consultants_col_names <- str_replace(consultants_col_names, "\\:", "")
-consultants_col_names <- str_replace(consultants_col_names, "-", "")
-consultants_col_names <- str_replace_all(consultants_col_names, " ", "_")
-consultants_col_names <- tolower(consultants_col_names)
-
-names(consultants) <- consultants_col_names
+names(consultants) <- names(consultants) %>%
+  str_replace("Email address", "email")
+  str_replace("Your affiliation: .{1,}", "affiliation")
+  str_replace("Your title:", "title")
+  str_replace("Which .{1,}", "shift_preference")
+  str_replace("How many .{1,}", "hours_preference")
+  str_replace("Check if you agree", "photo")
+  str_replace("\\:", "")
+  str_replace("-", "")
+  str_replace_all(" ", "_")
+  tolower()
 
 # Assign role -------------------------------------------------------
 
