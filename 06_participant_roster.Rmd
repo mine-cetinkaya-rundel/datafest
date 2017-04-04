@@ -1,0 +1,43 @@
+---
+title: "DataFest at [HOST] [YEAR] - Teams and participants"
+output: 
+  html_document: 
+    theme: cerulean
+---
+
+```{r load-packages, echo=FALSE, message=FALSE}
+library(readr)
+library(DT)
+library(knitr)
+library(dplyr)
+```
+
+```{r hide-code, echo=FALSE}
+opts_chunk$set(echo=FALSE)
+```
+
+```{r load-data, message=FALSE}
+participants <- read_csv("data/participants.csv")
+```
+
+```{r message=FALSE}
+n_participant <- nrow(participants)
+n_team <- length(unique(participants$team_name))
+today <- Sys.Date()
+```
+
+As of `r today`:
+
+- Number of participants: `r n_participant`
+
+- Number of teams: `r n_team`
+
+```{r}
+participants %>%
+  select(team_name, school, first_name, last_name, class_year, email) %>%
+  arrange(team_name, last_name, first_name) %>%
+  datatable(options = list(
+    pageLength = 30,
+    lengthMenu = c(10, 30, 50, 100, n_participant)
+  ))
+```

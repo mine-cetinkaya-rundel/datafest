@@ -1,0 +1,4 @@
+timestamp,last_name,first_name,email,affiliation,title,tshirt_size,shift_preference,hours_preference,photo,role
+4/3/2017 22:20:21,Norris,Clifford,clifford.norris@gmail.com,Google,Data Scientist,Large,"Saturday - 4-6pm, Saturday - 6-8pm, Saturday - 8-10pm",6 or fewer,I understand that during this event my picture may be taken and might be posted on social media and/or the event website.,Consultant
+4/3/2017 22:21:25,Garnet,Kaye,kaye.garnet@gmail.com,RStudio,Data Scientist,Medium,"Friday - 8-10pm, Friday - 10-12pm",2,I understand that during this event my picture may be taken and might be posted on social media and/or the event website.,Consultant
+4/3/2017 22:22:52,Flannery,Alex,alex.flannery@gmail.com,Faber College,Graduate student,Large,"Sunday - 8-10am, Sunday - 10am-12pm, Sunday - 12-2pm",4 or fewer,I understand that during this event my picture may be taken and might be posted on social media and/or the event website.,Consultant
