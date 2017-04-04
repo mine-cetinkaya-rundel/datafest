@@ -1,0 +1,38 @@
+---
+title: "DataFest at [HOST] [YEAR] - Consultants"
+output: 
+  html_document: 
+    theme: cerulean
+---
+
+```{r load-packages, echo=FALSE, message=FALSE}
+library(readr)
+library(DT)
+library(knitr)
+library(dplyr)
+```
+
+```{r hide-code, echo=FALSE}
+opts_chunk$set(echo=FALSE)
+```
+
+```{r load-data, message=FALSE}
+consultants <- read_csv("data/consultants.csv")
+```
+
+```{r message=FALSE}
+n_cons <- nrow(consultants)
+today <- Sys.Date()
+```
+
+As of `r today` we have `r n_cons` consultants:
+
+```{r}
+consultants %>%
+  select(first_name, last_name, affiliation, title, email) %>%
+  arrange(last_name) %>%
+    datatable(options = list(
+    pageLength = 30,
+    lengthMenu = c(5, 10, 20)
+    ))
+```

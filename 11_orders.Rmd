@@ -1,0 +1,46 @@
+---
+title: "DataFest at [HOST] [YEAR] - Food and t-shirt orders"
+output: 
+  html_document: 
+    theme: cerulean
+---
+
+```{r load-packages, echo=FALSE, message=FALSE}
+library(readr)
+library(DT)
+library(knitr)
+library(dplyr)
+library(ggplot2)
+library(stringr)
+```
+
+```{r hide-code, echo=FALSE}
+opts_chunk$set(echo=FALSE)
+```
+
+```{r load-data, message=FALSE}
+all <- read_csv("data/all.csv")
+```
+
+## T-shirt
+
+We get different color shirts for students vs. consultants and judges.
+
+```{r}
+all %>%
+  mutate(tshirt_size = factor(tshirt_size, levels = c("Small", "Medium",
+                                                      "Large", "X-Large",
+                                                      "XX-Large"))) %>%
+  mutate(role = ifelse(role != "Participant", "Consultant/Judge", role)) %>%
+  group_by(role) %>%
+  count(tshirt_size)
+```
+
+## Food
+
+```{r}
+all %>%
+  filter(role == "Participant") %>%   # only participants asked
+  count(diet)
+```
+

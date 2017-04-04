@@ -1,0 +1,38 @@
+---
+title: "DataFest at [HOST] [YEAR] - Teams and participants"
+output: 
+  html_document: 
+    theme: cerulean
+---
+
+```{r load-packages, echo=FALSE, message=FALSE}
+library(readr)
+library(DT)
+library(knitr)
+library(dplyr)
+```
+
+```{r hide-code, echo=FALSE}
+opts_chunk$set(echo=FALSE)
+```
+
+```{r load-data, message=FALSE}
+looking <- read_csv("data/looking.csv")
+```
+
+```{r message=FALSE}
+n_looking <- nrow(looking)
+today <- Sys.Date()
+```
+
+As of `r today` the following students are looking for teammates.
+
+```{r}
+looking %>%
+  select(first_name, last_name, participation_level, class_year, major, school, participation_before, email) %>%
+  arrange(participation_level, class_year, major, school) %>%
+    datatable(options = list(
+    pageLength = 30,
+    lengthMenu = c(10, 20, n_looking)
+    ))
+```

@@ -1,0 +1,214 @@
+---
+title: "DataFest at [HOST] [YEAR] - Teams and participants"
+output: 
+  html_document: 
+    theme: cerulean
+---
+
+```{r load-packages, echo=FALSE, message=FALSE}
+library(readr)
+library(DT)
+library(knitr)
+library(dplyr)
+library(ggplot2)
+library(stringr)
+```
+
+```{r hide-code, echo=FALSE}
+opts_chunk$set(echo=FALSE)
+```
+
+```{r load-data, message=FALSE}
+participants <- read_csv("data/participants.csv")
+```
+
+## Overall
+
+```{r}
+n_participant <- nrow(participants)
+n_team <- length(unique(participants$team_name))
+today <- Sys.Date()
+```
+
+As of `r today`:
+
+- Number of participants: `r n_participant`
+
+- Number of teams: `r n_team`
+
+## Schools
+
+```{r}
+participants %>%
+  count(school) %>%
+  arrange(desc(n)) %>%
+    datatable(options = list(
+    lengthChange = FALSE
+    ))
+```
+
+
+# Schools and teams
+
+```{r}
+participants %>%
+  distinct(team_name, .keep_all = TRUE) %>%
+  count(school) %>%
+  arrange(desc(n)) %>%
+    datatable(options = list(
+    lengthChange = FALSE
+    ))
+```
+
+# Year
+
+```{r}
+participants <- participants %>%
+  mutate(class_year = factor(class_year, levels = c("First-year",
+                                                    "Sophomore",
+                                                    "Junior",
+                                                    "Senior")))
+```
+
+
+### All years
+
+```{r}
+participants %>%
+  count(class_year) %>%
+  datatable(options = list(
+    lengthChange = FALSE
+    ))
+```
+
+### Schools and year
+
+```{r}
+ggplot(data = participants, aes(x = school, fill = class_year)) +
+  geom_bar(position = "fill")
+```
+
+# Majors
+
+```{r}
+participants <- participants %>%
+  mutate(major = tolower(major)) %>%
+  mutate(is_stat = ifelse(str_detect(major, "stat"), 1, 0)) %>%
+  mutate(is_math = ifelse(str_detect(major, "math"), 1, 0)) %>%
+  mutate(is_cs = ifelse(str_detect(major, "computer"), 1, 0)) %>%
+  mutate(is_eng = ifelse(str_detect(major, "eng"), 1, 0)) %>%
+  mutate(is_ns = ifelse(str_detect(major, "natural"), 1, 0)) %>%
+  mutate(is_ss = ifelse(str_detect(major, "social"), 1, 0)) %>%
+  mutate(is_other = ifelse(is_stat == 0 & is_math == 0 & is_cs == 0 & is_eng == 0 & is_ns == 0 & is_ss == 0, 1, 0))
+```
+
+The values below add up to more than 100% since some students have double majors.
+
+```{r}
+stat_perc <- participants %>%
+  count(is_stat) %>%
+  transmute(n / sum(n)) %>%
+  slice(2) %>%
+  as.numeric() %>%
+  round(2) * 100
+```
+- Statistics: `r stat_perc`%
+
+```{r}
+cs_perc <- participants %>%
+  count(is_cs) %>%
+  transmute(n / sum(n)) %>%
+  slice(2) %>%
+  as.numeric() %>%
+  round(2) * 100
+```
+- Computer Science: `r cs_perc`%
+
+```{r}
+math_perc <- participants %>%
+  count(is_math) %>%
+  transmute( n / sum(n)) %>%
+  slice(2) %>%
+  as.numeric() %>%
+  round(2) * 100
+```
+- Mathematics: `r math_perc`%
+
+```{r}
+eng_perc <- participants %>%
+  count(is_eng) %>%
+  transmute(n / sum(n)) %>%
+  slice(2) %>%
+  as.numeric() %>%
+  round(2) * 100
+```
+- Engineering: `r eng_perc`%
+
+```{r}
+ns_perc <- participants %>%
+  count(is_ns) %>%
+  transmute(n / sum(n)) %>%
+  slice(2) %>%
+  as.numeric() %>%
+  round(2) * 100
+```
+- Natural Sciences: `r ns_perc`%
+
+```{r}
+ns_ss <- participants %>%
+  count(is_ss) %>%
+  transmute(n / sum(n)) %>%
+  slice(2) %>%
+  as.numeric() %>%
+  round(2) * 100
+```
+- Social Sciences: `r ns_perc`%
+
+
+```{r}
+other_perc <- participants %>%
+  count(is_other) %>%
+  transmute(n / sum(n)) %>%
+  slice(2) %>%
+  as.numeric() %>%
+  round(2) * 100
+
+other_majors <- unique(participants$major[participants$is_other == 1])
+```
+- Other: `r other_perc`% (These include `r other_majors`.)
+
+
+# Team sizes
+
+```{r}
+avg_team_size <- participants %>%
+  group_by(team_name) %>%
+  summarise(team_size = n()) %>%
+  summarise(avg_team_size = mean(team_size)) %>%
+  as.numeric %>%
+  round(2)
+```
+
+Average team size is `r avg_team_size`.
+
+```{r}
+participants %>%
+  count(team_name) %>%
+  arrange(n, team_name) %>%
+  datatable()
+```
+
+# Participants
+
+```{r}
+participants %>%
+  select(team_name, school, first_name, last_name) %>%
+  arrange(team_name, last_name, first_name) %>%
+  datatable(options = list(
+    pageLength = 30,
+    lengthMenu = c(10, 30, 50)
+    ))
+```
+
+
+

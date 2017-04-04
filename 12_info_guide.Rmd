@@ -1,0 +1,276 @@
+---
+title: "DataFest at [HOST] [YEAR] - Participant Info & Guidelines"
+subtitle: "https://stat.duke.edu/datafest/"
+output: 
+  html_document: 
+    theme: cerulean
+    toc: true
+    toc_float: true
+---
+
+```{r load-packages, echo=FALSE, message=FALSE}
+library(readr)
+library(DT)
+library(knitr)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r hide-code, echo=FALSE}
+opts_chunk$set(echo=FALSE)
+```
+
+**Note: This document may be updated as the event approaches; any major updates will be clearly marked.**
+
+**Presentation upload link for Sunday:** INSERT PRESENTATION UPLOAD LINK (See [presentations](#presentations) for details.)
+
+## Location
+
+DataFest 2017 @ Duke will start with registration and end with awards ceremony at Gross Hall. In between, participants will work during the day and night at The Edge, and spill over to Link during the day. See the schedule for more detailed information for important events in between and their locations.
+
+### Directions & Maps
+
+- Gross Hall
+    - Address: 140 Science Drive Durham, NC 27708
+    - On the Duke map: http://maps.duke.edu/map/?id=21#!s/key=gross hall?m/6866
+- The Edge, Bostock Library
+    - Address: 411 Chapel Dr, Durham, NC 27708
+    - On the Duke map: http://maps.duke.edu/map/?id=21#!s/key=bostock library?m/4980
+    
+You can see a map of all DataFest locations and suggested parking spots [here](https://drive.google.com/open?id=1hgcAY7z3Vhzs02ppZ22TY6q-GxQ&usp=sharing).
+
+### Transportation & Parking
+
+We ask that you carpool with teammates as parking on campus can be tricky.
+
+Non-Duke students who will be traveling to Duke's campus for DataFest should plan on driving with their teammates. The closest parking lot
+- for those affiliated with Duke is the Allen Lot
+- for those not affiliated with Duke is Bryan Center Parking Garage
+
+More information on parking at the Bryan Center and associated costs can be found at http://parking.duke.edu/parking/visitor_parking/.
+
+#### UNC students
+
+There is a bus that runs directly from UNC to Duke Chapel every half-hour with no stops. Their schedule is here:  http://admin.gotransitnc.org/sites/default/files/maps-and-schedules/gotriangle/RoutesAndSchedules-1759.pdf
+
+The last shuttle back to UNC leaves at 10:30 p.m. Friday and 11:30 p.m. on Saturday. The first ones on Saturday/Sunday leave UNC at 12:00 pm. The bus is free for UNC GoPass holders and otherwise $3.00.
+
+If you will be arriving earlier than the earliest bus, or leaving later than the latest bus, and do not have access to a car, see below.
+
+#### All non-Duke students
+
+If you drive to Duke and park, you can get reimbursed for parking. Please save your receipts.
+
+If you do not have access to a car / carpool, we recommend that you use a service like Uber or Lyft. We can reimburse you for your ride as long as there are 3+ students in the car with you (we do not have the funds to reimburse individual rides).
+
+For reimbursement of parking and transportation you must give / send your receipt to
+
+- UNC students: Robin Cunningham
+- NC State students: Herle McGowan
+- Others: Mine Cetinkaya-Rundel
+
+**by Monday, April 3**. You should also write the names of the riders in the back of the receipt. No reimbursement will be provided without printed receipts.
+
+UNC students will be reimbursed up to $20/day/team and NC State students will be reimbursed up to $40/day/team.
+
+## Schedule
+
+The schedule is at https://stat.duke.edu/datafest/#schedule. 
+
+Registration opens at 4:00pm on Friday at Gross Hall.
+
+You are of course free to come and go as you please throughout the event, but here are the times all team members should plan to be on premises: 
+
+- Friday sometime between 4-6pm - registration
+- Friday 6-7pm - kickoff
+- Saturday 5:30pm - group photo
+- Sunday 1-5pm - judging (both rounds) and awards ceremony
+
+Consultants will be available for help until midnight; you can work as late/early as you like. We recommend checking out the [Consultant schedule](INSERT LINK) to plan out your weekend.
+
+
+## Venue information
+
+### Security & Access
+
+You will have 24 hour access to The Edge. Duke students should have their Duke IDs with them. All students will be given DataFest badges that you should wear at all times. Between midnight and 8am there will be a security guard at the door of The Edge, and you will need your DataFest badge to get access to the premises.
+
+**Teams who are spotted in areas of the library other than The Edge after midnight will be disqualified from the competition.**
+
+### The Edge space
+
+You are welcomed to work in the open study space, the lounge, the workshop room, the visualization lab and the digital studio. Additionally, Project Rooms 1, 2, 3, 4, and 5 are reserved for DataFest participants. **Note that Project Room 6 is off limits!** 
+
+If you would like to use another Project Room you must reserve it using the iPad located outside the room. Since this requires a duke.edu email address, non-Duke students wanting to reserve a room are welcomed to ask one of the organizers (who can usually be found around the info desk) to reserve a room for them. If a room is reserved for “DataFest” any team can use it, first come first serve.
+
+Note that the usual Edge rules for room reservations apply -- if you’re not there within 5 minutes of your reservation someone else can claim the room.
+
+### The Link space
+
+Some teams have been (randomly) assigned to work in The Link (Link Seminar 4, Link Classroom 1, 3, 4, and 5), as well as the open Link space. Others are welcomed to make use of these spaces as well. The goal with spreading out to the Link is to keep the crowd manageable in The Edge. However note that the Link (and all other areas of the library aside from The Edge) is off limits after midnight.
+
+## Social media
+
+Follow us on social media and don’t hesitate to share the fun and thank our sponsors (except for the data provider, which we need to keep a secret for the time being).
+
+- Twitter: https://twitter.com/DukeDataFest, #datafestATduke
+- Facebook: https://www.facebook.com/ASADataFest
+
+We will use these channels for announcements throughout the event as well, so make sure that you're checking regularly.
+
+## Computing and supplies
+
+We recommend that every member of the team bring a laptop, if possible. You might find it helpful to have a mix of PCs and Macs, since they have different strengths.
+
+We recommend that you make sure beforehand that the software you will be using throughout the weekend is properly installed and running on your computer. You will be working with a large dataset so make sure that you have the space for it on your hard drive.
+
+You might want to bring some favorite statistical or computational reference books, if you have them, or bookmark some pages that you routinely refer to.
+
+We will provide meals, snacks, and munchies. Feel free to bring anything additional you might want.
+
+### Cloud computing resources for DataFest
+
+Cloud computing resources for R and Python will be provided. Details to be emailed.
+
+
+## Data
+
+At the end of the kickoff presentation you will be given three options to obtain the data:
+
+- Via the could computing resources mentioned above.
+- Go to the registration desk at The Edge and check out a USB stick containing the data. When you're done downloading the data off it please return it to the registration desk so that another team can use it.
+- Go to a URL (to be provided at the kickoff) to download a zipped folder containing the data. Note that this link will expire in an hour. After that point if you need to re-download the data you will need to check out a USB stick from the registration desk.
+
+You will also be given a link to a Google Doc where you can ask questions about the data and a representative from the provider will answer them periodically throughout the event. Link to be emailed.
+
+### Large data advice
+
+The dataset you will be working with is quite large. If you type a variable name to view it, it will take a while to display. Therefore, remember these R commands: `head()`, `tail()`, `str()`.
+
+We strongly recommend you create a small data set that you can use to test things on. Then, if it works out, you can apply your procedure to the large dataset. Some procedures can take a frustratingly long time to run on large data sets, and so it will be comforting to know that your procedure works (because you tested it on a smaller data set) while you wait. We recommend taking a random sample of rows from the original data set, but there might be other approaches you find useful.
+
+
+## Presentations, judging, and awards
+
+### Presentations
+
+Each team will have 4 minutes + 1 minute Q&A to present their findings to the judges. That’s exactly 4 minutes, not 4 minutes and a few additional seconds. Each team will be allowed at most three slides. Three! So at some point Saturday night or Sunday morning, you might want to set aside time to think about what you want the judges to know. The 4 minute presentation and 1 minute Q&A time limits will be strictly enforced. All team members must be present for the presentation, but not all team members need to actually speak (given the time limitation). 
+
+Along with your presentation you will also turn in a one-page write-up of your project. You can think about this as the text of your presentation. The judges will refer to these during deliberation. 
+
+#### Submitting your presentation
+
+At noon on Sunday all work must stop and you must upload your presentation and your write up to the Box folder at [INSERT LINK]. If you are having technical difficulty, you can come to the registration desk at The Edge and ask a consultant for help. Consultants will be around to help until 12:30pm.
+
+Teams who fail to upload their presentations and write-ups by 12:30pm will not be eligible to have their presentations judged. 
+
+#### File naming
+
+The files you’re submitting must be named in the following manner: 
+
+- [Team Name] - Presentation 
+- [Team Name] - Writeup
+
+#### Allowed file formats
+
+- We very strongly recommend using PDF, Keynote, or PowerPoint. 
+- If using a web-based tool like GoogleDocs or Prezi, please export to PDF and upload the PDF as your submission. 
+
+Note that you will not have time to log on/off to your account before your presentation. We don’t want to restrict your creativity but it is your responsibility to make sure that your presentation works seamlessly before the judging session begins. 
+
+### Judging
+
+Judging will happen in two rounds:
+
+#### First Round of Judging
+
+Teams will be randomly assigned to 8 judging sessions (10 teams per session) where they will present their findings to a panel of two judges. Each judging panel will evaluate and score all teams in their session on three categories (insight, use of outside data, visualization) and nominate three teams to continue on to the next round of judging. They will also have the opportunity to nominate additional teams as honorable mentions or on other categories. These teams will be acknowledged at the awards ceremony, but will not be competing for awards in the final round.
+
+During the time participants will be transitioning from their first round judging rooms to Gross Hall 107 for final round, organizers will process scoring data from the judges. Scores will be normalized to scale judges' scoring, and top 10 teams will be selected to present their work in the final round of judging. These teams will be announced at 3pm in Gross Hall 107. **We will not be sending emails about these, so if your team was nominated to proceed to the next round, you must come to Gross Hall 107 to find out whether you will be presenting in the final round.**
+
+First round presentations and judging will be held at the following eight venues. On Saturday you will receive an email letting you know your room assignment.
+
+1. Edge Workshop Room
+1. Perkins 217
+1. Old Chem 116
+1. Social Psychology 130
+1. Gross Hall 103
+1. Gross Hall 107
+1. Gross Hall 270
+1. Gross Hall 330
+
+If you are unfamiliar with Duke's campus, you might want to check out your room assignment before 1pm on Sunday so that you are not late to your presentation. Helpers will be on hand to guide students from The Edge to these locations as well. All of these buildings are marked on [this map](https://drive.google.com/open?id=1hgcAY7z3Vhzs02ppZ22TY6q-GxQ&usp=sharing) as well.
+
+#### Final Round of Judging
+
+10 highest ranked out of the 24 teams that were nominated to proceed onto the next round of judging will present their work again to a new panel of five judges. Teams will give the same presentation as they gave before. Three of these will be selected for the award categories listed below. The judges also have the option to name a fourth winner as Judges’ Pick. 
+
+Final round of judging will take place in Gross Hall 107 (same room as the kickoff).
+
+All are welcomed to the presentations and award ceremony.
+
+### Awards
+
+Awards will be given in three categories:
+
+- Best Insight
+- Best Use of Outside Data
+- Best Visualization
+
+These are listed in no particular order.
+
+The judges also have the option to name a fourth winner as Judges' Pick.
+
+Award ceremony will take place in Gross Hall 107 (same room as the kickoff).
+
+Winners will receive medals and books as well as one-year student memberships to the American Statistical Association. See http://www.amstat.org/membership/ for membership benefits.
+
+#### Raffle prizes
+
+Throughout the event we will be giving out raffle prizes. Announcements for these will be shared on social media. Follow these channels to get a chance to win one of these sweet prizes! Winning will also require that you are on premises at the time a prize is announced.
+
+##  Recruiting
+
+DataFest is a great recruiting opportunity for many employers, and surely they won’t miss it! 
+
+Many of our sponsors are sponsoring the event so you can find out more about them.
+
+Most of our consultants are coming from companies who are recruiting or at a minimum wanting to meet you, so chat with them, find out what they do, network.
+
+We will collect resumes and share them with some of our sponsors. Participation in the resume book is optional, but highly recommended. You will receive information about this during the event.
+
+
+## Rules
+
+- You can come and go as you please, but all work must be completed on premises.
+
+- Do not use any library space other than The Edge after midnight. Students found in other areas of the library after midnight will be disqualified from the competition.
+
+- Do not share the name of the data source publicly or on social media before May 1st. There are many other upcoming DataFests around the country and we want to make sure the dataset remains a surprise for them.
+
+- Clicking on the download link for the dataset means that you agree to the following Non-Disclosure agreement from the data provider. You can freely share your results, presentations, findings, etc. as part of your digital portfolio, however you are not allowed to share the raw data with anyone outside of DataFest. At the end of DataFest, you must delete all data from thumb drives, hard drives, etc. The data are sensitive.
+
+- At all times between 9am-12 (midnight) there will be a friendly consultants present. These are faculty, grad students, members of the Research Triangle Analysts Group, or other professionals with field specific knowledge on the dataset. They all have different areas of expertise, so if you get stuck on something and one consultant isn’t able to help, ask someone else later. Feel free to ask anything. This is not an exam, but a collaboratory competition. Do not expect the consultants to write code for you, or do data management, etc. They are there to help point you in the right direction, but you're responsible for getting there on your own.
+
+## Who is at ASA DataFest @ Duke 2017?
+
+```{r load-data, message=FALSE}
+participants <- read_csv("data/participants.csv")
+consultants <- read_csv("data/consultants.csv")
+judges <- read_csv("data/judges.csv")
+```
+
+```{r}
+n_participant <- nrow(participants)
+n_team <- length(unique(participants$team_name))
+n_consultant <- nrow(consultants)
+n_judges <- nrow(judges)
+```
+
+- `r n_participant` participants in `r n_team` teams!
+- `r n_consultant - 1` consultants
+- `r n_judges` judges
+
+### Participants
+
+View the participant summary document for more on the participants.
