@@ -92,91 +92,45 @@ ggplot(data = participants, aes(x = school, fill = class_year)) +
 
 ```{r}
 participants <- participants %>%
-  mutate(major = tolower(major)) %>%
-  mutate(is_stat = ifelse(str_detect(major, "stat"), 1, 0)) %>%
-  mutate(is_math = ifelse(str_detect(major, "math"), 1, 0)) %>%
-  mutate(is_cs = ifelse(str_detect(major, "computer"), 1, 0)) %>%
-  mutate(is_eng = ifelse(str_detect(major, "eng"), 1, 0)) %>%
-  mutate(is_ns = ifelse(str_detect(major, "natural"), 1, 0)) %>%
-  mutate(is_ss = ifelse(str_detect(major, "social"), 1, 0)) %>%
-  mutate(is_other = ifelse(is_stat == 0 & is_math == 0 & is_cs == 0 & is_eng == 0 & is_ns == 0 & is_ss == 0, 1, 0))
+  mutate(
+    major = tolower(major), 
+    is_stat = str_detect(major, "stat"), 
+    is_math = str_detect(major, "math"), 
+    is_cs = str_detect(major, "computer"), 
+    is_eng = str_detect(major, "eng"), 
+    is_ns = str_detect(major, "natural"), 
+    is_ss = str_detect(major, "social"), 
+    is_other = !(is_stat | is_math | is_cs | is_eng | is_ns | is_ss)
+  )
 ```
 
 The values below add up to more than 100% since some students have double majors.
 
-```{r}
-stat_perc <- participants %>%
-  count(is_stat) %>%
-  transmute(n / sum(n)) %>%
-  slice(2) %>%
-  as.numeric() %>%
-  round(2) * 100
+```{r fun}
+calc_major_perc <- function(data, is_major){
+  major_perc <- participants %>%
+    group_by_(is_major) %>%
+    summarise(n = n()) %>%
+    mutate(perc = n / sum(n)) %>%
+    slice(2) %>%
+    select(perc) %>%
+    as.numeric() %>%
+    round(2) * 100
+  return(major_perc)
+}
 ```
-- Statistics: `r stat_perc`%
-
-```{r}
-cs_perc <- participants %>%
-  count(is_cs) %>%
-  transmute(n / sum(n)) %>%
-  slice(2) %>%
-  as.numeric() %>%
-  round(2) * 100
-```
-- Computer Science: `r cs_perc`%
 
 ```{r}
-math_perc <- participants %>%
-  count(is_math) %>%
-  transmute( n / sum(n)) %>%
-  slice(2) %>%
-  as.numeric() %>%
-  round(2) * 100
+other_majors <- unique(participants$major[participants$is_other == TRUE])
 ```
-- Mathematics: `r math_perc`%
 
-```{r}
-eng_perc <- participants %>%
-  count(is_eng) %>%
-  transmute(n / sum(n)) %>%
-  slice(2) %>%
-  as.numeric() %>%
-  round(2) * 100
-```
-- Engineering: `r eng_perc`%
-
-```{r}
-ns_perc <- participants %>%
-  count(is_ns) %>%
-  transmute(n / sum(n)) %>%
-  slice(2) %>%
-  as.numeric() %>%
-  round(2) * 100
-```
-- Natural Sciences: `r ns_perc`%
-
-```{r}
-ns_ss <- participants %>%
-  count(is_ss) %>%
-  transmute(n / sum(n)) %>%
-  slice(2) %>%
-  as.numeric() %>%
-  round(2) * 100
-```
-- Social Sciences: `r ns_perc`%
-
-
-```{r}
-other_perc <- participants %>%
-  count(is_other) %>%
-  transmute(n / sum(n)) %>%
-  slice(2) %>%
-  as.numeric() %>%
-  round(2) * 100
-
-other_majors <- unique(participants$major[participants$is_other == 1])
-```
-- Other: `r other_perc`% (These include `r other_majors`.)
-
+- Statistics: `r calc_major_perc(participants, "is_stat")`%
+- Computer Science: `r calc_major_perc(participants, "is_cs")`%
+- Mathematics: `r calc_major_perc(participants, "is_math")`%
+- Engineering: `r calc_major_perc(participants, "is_eng")`%
+- Natural Sciences: `r calc_major_perc(participants, "is_ns")`%
+- Social Sciences: `r calc_major_perc(participants, "is_ss")`%
+- Other: `r calc_major_perc(participants, "is_other")`% (These include `r other_majors`.)
 
 # Team sizes
 
