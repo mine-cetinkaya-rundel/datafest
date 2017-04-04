@@ -2,6 +2,7 @@
 library(googlesheets)
 library(tidyverse)
 library(stringr)
+library(forcats)
 
 # Inputs ------------------------------------------------------------
 host <- "[HOST]"
@@ -34,13 +35,11 @@ participants <- part_wide %>%
   select(-photo) %>%
   gather(column, entry, last_name_1:diet_5, -timestamp, -team_name) %>%
   mutate(person_in_team = str_match(column, "[0-9]")) %>%
-  mutate(column = str_replace(column, "_[0-9]", "")) %>%
-  spread(column, entry) %>%    # orders columns in alphabetical order (?)
+  mutate(column = fct_inorder(str_replace(column, "_[0-9]", ""))) %>%
+  spread(column, entry) %>%
   filter(!is.na(last_name)) %>%
   arrange(team_name, last_name, first_name) %>%
-  select(-person_in_team) %>%
-  select(timestamp, team_name, first_name, last_name, email, school, 
-         class_year, major, participation, diet, tshirt_size)    # reorder columns
+  select(-person_in_team)
 
 # Check if there are duplicate emails -------------------------------
 
