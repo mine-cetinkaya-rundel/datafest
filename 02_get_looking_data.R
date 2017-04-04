@@ -17,17 +17,14 @@ looking <- gs_title(looking_name) %>%
 
 # Rename columns ----------------------------------------------------
 
-looking_col_names <- names(looking)
-
-looking_col_names <- str_replace(looking_col_names, "Email address", "email")
-looking_col_names <- str_replace(looking_col_names, "How much time do you want to spend on DataFest over the weekend\\?", "participation_level")
-looking_col_names <- str_replace(looking_col_names, " Check all that apply.", "")
-looking_col_names <- str_replace(looking_col_names, "Have you participated in DataFest before\\?", "participation_before")
-looking_col_names <- str_replace(looking_col_names, "\\:", "")
-looking_col_names <- str_replace_all(looking_col_names, " ", "_")
-looking_col_names <- tolower(looking_col_names)
-
-names(looking) <- looking_col_names
+names(looking) <- names(looking)
+  str_replace("Email address", "email")
+  str_replace("How much time do you want to spend on DataFest over the weekend\\?", "participation_level")
+  str_replace(" Check all that apply.", "")
+  str_replace("Have you participated in DataFest before\\?", "participation_before")
+  str_replace("\\:", "")
+  str_replace_all(" ", "_")
+  tolower()
 
 # Remove any looking people who are already on participants ---------
 
