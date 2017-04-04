@@ -1,0 +1,89 @@
+---
+title: "Consultant & Judge Info"
+subtitle: "https://stat.duke.edu/datafest/"
+output: 
+  html_document: 
+    theme: cerulean
+    toc: true
+    toc_float: true
+---
+
+```{r load-packages, echo=FALSE, message=FALSE}
+library(readr)
+library(DT)
+library(knitr)
+library(dplyr)
+library(googlesheets)
+```
+
+```{r hide-code, echo=FALSE}
+opts_chunk$set(echo=FALSE)
+```
+
+**Note: This document may be updated as the event approaches; any major updates will be clearly marked.**
+
+## General Event Info 
+
+All information regarding the event can be found at https://stat.duke.edu/datafest/.
+
+Additionally, you can read the information about the event and participant profiles shared with all participants at http://rpubs.com/mine/df2017_participant_info_guide.
+
+## Location
+
+Throughout the weekend students will work at The Edge and The Link.
+
+### When you get there
+
+Please check in at registration desk at The Edge, and grab your badge and t-shirt when you get in. It would be great if you can wear your blue DataFest t-shirt when you're "on duty" so that students can recognize you as a consultant. This is, of course, not a requirement, just a request.
+
+## Contact
+
+If you need to contact an organizer at any point during the event, email Mine at mine@stat.duke.edu or call/text at ...
+
+## Parking reimbursement
+
+We have some parking passes for non-Duke visitors at the Bryan Center Parking Garage. Make sure that you park inside the garage. You should not need to pay upon entry, and we will give you a pass you can use before you exit.
+
+More information on parking at the Bryan Center and associated costs can be found at http://parking.duke.edu/parking/visitor_parking/. If you end up having to pay for parking please hold on to your receipt so that we can reimburse you.
+
+## Data
+
+Please note that this information is currently TOP SECRET!!! We do not want it getting out to students prior to the event at Duke, or in other locations in later weeks.
+
+All judges will receive a link to a Box document containing information on the data. Please let me know if you have not received the invite. Any consultants who would like access to this document, please email me to request access.
+
+Once the event begins, the data will be available to judges and consultants.
+
+## Consultants
+
+The most important thing is to keep the mood light and encouraging! We suspect by sometime Saturday afternoon things might seem rather dire to some of the students.
+
+On Friday night, students will be busy trying to make sense of the data. We expect that some of them might have technical problems with getting started (loading the data, viewing it, etc.). Throughout the weekend the teams will be on their own, though we might have intermittent “check ins”. We imagine they will get stuck and need advice. Sometimes, the advice could be highly technical and, depending on your background, outside your expertise. Don't worry. They know that you are not there to solve their problems, but to offer advice. See if you can steer them towards standard problem-solving techniques: break the problem into smaller pieces, go online for advice, etc. Guide them to think about context. What sort of distribution do they expect? Why? What might cause that? How does that compare to what they saw?
+
+This is a competition, but it is supposed to be friendly and collaborative, so don't worry about revealing any special knowledge. This is not an exam, and so if someone asks, please answer if you can, and don't worry about other teams over hearing. I'm hoping that, after the first evening, teams will be sharing basic technical advice on their own.
+
+All are welcomed to the presentations and award ceremony.
+
+### A note about software
+
+Most students will use R or Python but we also expect many to use Matlab, SAS, Excel, JMP, etc. as well. If asked for support on a platform you’re not familiar with, simply stating so is sufficient. If asked for support on a platform you are familiar with, you are welcomed to assist at any capacity you feel comfortable/up to -- from talking through the approach at a high level to sitting down and coding with them.
+
+
+## Judging
+
+There are three prize categories:
+
+- Best Insight
+- Best Visualization
+- Best Use of Outside Data
+
+The latter category is meant to encourage students to find supporting information and/or data beyond what we give them.
+
+Teams will have 5 minutes (4 min presentation + 1 min Q&A) and 3 slides to make their case.
+
+At least one helper will also be in the room with you to run the session, keep time, etc. You will also be given a judging packed including a rubric and note cards to help keep things straight as well as your t-shirt and badge. It’s strongly recommended that you make note of teams that are especially strong as you're watching the presentations so that the deliberation conversation can be as efficient as possible.
+
+## Feedback
+
+ASA DataFest has become an annual event that is now being officially sponsored by the American Statistical Association and held at numerous locations with participation from a large number of universities. We hope to grow the event further in the coming years. With that in mind, please send me any advice or constructive criticisms that will help us improve this event in the future.
+Our primary goal is to provide a rewarding experience for the undergraduates, an experience that sharpens their analytical skills and gives them some confidence that they can take what they learn here out into the "real world".
