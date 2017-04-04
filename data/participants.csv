@@ -1,17 +1,17 @@
-timestamp,team_name,first_name,last_name,email,school,class_year,major,participation,diet,tshirt_size,is_stat,is_math,is_cs,is_eng,is_ns,is_ss,is_other,role
-4/1/2017 20:14:05,The Pit,James,Andrews,james.andrews@pcu.edu,Port Chester University,First-year,computer science,No,No dietary restrictions,Large,0.0,0.0,1.0,0.0,0.0,0.0,0.0,Participant
-3/31/2017 23:55:00,Passive Regression,Amanda,Boyd,amanda.boyd@pcu.edu,Port Chester University,First-year,data science,No,No dietary restrictions,Medium,0.0,0.0,0.0,0.0,0.0,0.0,1.0,Participant
-4/3/2017 16:14:00,Fake iid's,Carolyn,Byrd,carolyn.byrd@hu.edu,Harrison University,Sophomore,statistics,No,No dietary restrictions,Medium,1.0,0.0,0.0,0.0,0.0,0.0,0.0,Participant
-3/31/2017 23:55:00,Passive Regression,Rosa,Fox,rosa.fox@pcu.edu,Port Chester University,First-year,"computer science, mathematics",No,No dietary restrictions,Large,0.0,1.0,1.0,0.0,0.0,0.0,0.0,Participant
-4/2/2017 22:20:05,Bae's Theorem,Adrienne,Fuller,adrienne.fuller@faber.edu,Faber College,Sophomore,"natural sciences (biology, chemistry, etc.)",Yes,No dietary restrictions,Small,0.0,0.0,0.0,0.0,1.0,0.0,0.0,Participant
-3/31/2017 23:55:00,Passive Regression,Lucas,Gonzales,lucas.gonzales@pcu.edu,Port Chester University,First-year,statistics,No,No dietary restrictions,Medium,1.0,0.0,0.0,0.0,0.0,0.0,0.0,Participant
-4/4/2017 1:03:26,Bayes Anatomy,Meredith,Gray,mgray@googlemail.com,Faber College,First-year,pre-med,No,No dietary restrictions,Small,0.0,0.0,0.0,0.0,0.0,0.0,1.0,Participant
-4/3/2017 16:14:00,Fake iid's,Gordon,Hawkins,gordon.hawkins@hu.edu,Harrison University,Sophomore,statistics,Yes,No dietary restrictions,Small,1.0,0.0,0.0,0.0,0.0,0.0,0.0,Participant
-4/2/2017 22:20:05,Bae's Theorem,Sylvia,Hicks,sylvia.hicks@faber.edu,Faber College,Sophomore,computer science,No,Lacto Vegetarian,Large,0.0,0.0,1.0,0.0,0.0,0.0,0.0,Participant
-4/1/2017 20:14:05,The Pit,Tom,Lawrence,tom.lawrence@pcu.edu,Port Chester University,First-year,statistics,No,No dietary restrictions,Large,1.0,0.0,0.0,0.0,0.0,0.0,0.0,Participant
-4/3/2017 16:14:00,Fake iid's,Cecilia,Pittman,cecilia.pittman@hu.edu,Harrison University,Sophomore,"statistics, mathematics",Yes,No dietary restriction,Small,1.0,1.0,0.0,0.0,0.0,0.0,0.0,Participant
-4/3/2017 16:14:00,Fake iid's,Paul,Rios,paul.rios@hu.edu,Harrison University,Junior,"computer science, statistics",No,Gluten Free,Medium,1.0,0.0,1.0,0.0,0.0,0.0,0.0,Participant
-4/3/2017 16:14:00,Fake iid's,Ryan,Rose,rose.ryan@hu.edu,Harrison University,Junior,statistics,Yes,No dietary restrictions,X-Large,1.0,0.0,0.0,0.0,0.0,0.0,0.0,Participant
-4/4/2017 1:03:26,Bayes Anatomy,Derek,Shepherd,derek@googlemail.com,Faber College,Junior,"mathematics, pre-law",No,No dietary restrictions,Large,0.0,1.0,0.0,0.0,0.0,0.0,0.0,Participant
-4/2/2017 22:20:05,Bae's Theorem,Toni,Simpson,toni.simpson@faber.edu,Faber College,Sophomore,mathematics,No,No dietary restrictions,Medium,0.0,1.0,0.0,0.0,0.0,0.0,0.0,Participant
-4/2/2017 22:20:05,Bae's Theorem,Vicky,Water,vicky.water@faber.edu,Faber College,Senior,statistics,Yes,No dietary restrictions,Small,1.0,0.0,0.0,0.0,0.0,0.0,0.0,Participant
+timestamp,team_name,first_name,last_name,email,school,class_year,major,participation,diet,tshirt_size,role
+4/1/2017 20:14:05,The Pit,James,Andrews,james.andrews@pcu.edu,Port Chester University,First-year,Computer Science,No,No dietary restrictions,Large,Participant
+3/31/2017 23:55:00,Passive Regression,Amanda,Boyd,amanda.boyd@pcu.edu,Port Chester University,First-year,Data Science,No,No dietary restrictions,Medium,Participant
+4/3/2017 16:14:00,Fake iid's,Carolyn,Byrd,carolyn.byrd@hu.edu,Harrison University,Sophomore,Statistics,No,No dietary restrictions,Medium,Participant
+3/31/2017 23:55:00,Passive Regression,Rosa,Fox,rosa.fox@pcu.edu,Port Chester University,First-year,"Computer Science, Mathematics",No,No dietary restrictions,Large,Participant
+4/2/2017 22:20:05,Bae's Theorem,Adrienne,Fuller,adrienne.fuller@faber.edu,Faber College,Sophomore,"Natural Sciences (Biology, Chemistry, etc.)",Yes,No dietary restrictions,Small,Participant
+3/31/2017 23:55:00,Passive Regression,Lucas,Gonzales,lucas.gonzales@pcu.edu,Port Chester University,First-year,Statistics,No,No dietary restrictions,Medium,Participant
+4/4/2017 1:03:26,Bayes Anatomy,Meredith,Gray,mgray@googlemail.com,Faber College,First-year,Pre-med,No,No dietary restrictions,Small,Participant
+4/3/2017 16:14:00,Fake iid's,Gordon,Hawkins,gordon.hawkins@hu.edu,Harrison University,Sophomore,Statistics,Yes,No dietary restrictions,Small,Participant
+4/2/2017 22:20:05,Bae's Theorem,Sylvia,Hicks,sylvia.hicks@faber.edu,Faber College,Sophomore,Computer Science,No,Lacto Vegetarian,Large,Participant
+4/1/2017 20:14:05,The Pit,Tom,Lawrence,tom.lawrence@pcu.edu,Port Chester University,First-year,Statistics,No,No dietary restrictions,Large,Participant
+4/3/2017 16:14:00,Fake iid's,Cecilia,Pittman,cecilia.pittman@hu.edu,Harrison University,Sophomore,"Statistics, Mathematics",Yes,No dietary restriction,Small,Participant
+4/3/2017 16:14:00,Fake iid's,Paul,Rios,paul.rios@hu.edu,Harrison University,Junior,"Computer Science, Statistics",No,Gluten Free,Medium,Participant
+4/3/2017 16:14:00,Fake iid's,Ryan,Rose,rose.ryan@hu.edu,Harrison University,Junior,Statistics,Yes,No dietary restrictions,X-Large,Participant
+4/4/2017 1:03:26,Bayes Anatomy,Derek,Shepherd,derek@googlemail.com,Faber College,Junior,"Mathematics, Pre-law",No,No dietary restrictions,Large,Participant
+4/2/2017 22:20:05,Bae's Theorem,Toni,Simpson,toni.simpson@faber.edu,Faber College,Sophomore,Mathematics,No,No dietary restrictions,Medium,Participant
+4/2/2017 22:20:05,Bae's Theorem,Vicky,Water,vicky.water@faber.edu,Faber College,Senior,Statistics,Yes,No dietary restrictions,Small,Participant
