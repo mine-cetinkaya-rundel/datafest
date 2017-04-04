@@ -18,20 +18,17 @@ part_wide <- gs_title(part_wide_name) %>%
 
 # Rename columns ----------------------------------------------------
 
-part_wide_col_names <- names(part_wide)
-
-part_wide_col_names <- str_replace(part_wide_col_names, " of team member", "")
-part_wide_col_names <- str_replace(part_wide_col_names, " in DataFest before", "")
-part_wide_col_names <- str_replace(part_wide_col_names, " Check all that apply.", "")
-part_wide_col_names <- str_replace(part_wide_col_names, "Email address", "email")
-part_wide_col_names <- str_replace(part_wide_col_names, "Dietary restrictions", "diet")
-part_wide_col_names <- str_replace(part_wide_col_names, "Check if you agree", "photo")
-part_wide_col_names <- str_replace(part_wide_col_names, "\\:", "")
-part_wide_col_names <- str_replace(part_wide_col_names, "-", "")
-part_wide_col_names <- str_replace_all(part_wide_col_names, " ", "_")
-part_wide_col_names <- tolower(part_wide_col_names)
-
-names(part_wide) <- part_wide_col_names
+names(part_wide) <- names(part_wide) %>%
+  str_replace(" of team member", "") %>%
+  str_replace(" in DataFest before", "") %>%
+  str_replace(" Check all that apply.", "") %>%
+  str_replace("Email address", "email") %>%
+  str_replace("Dietary restrictions", "diet") %>%
+  str_replace("Check if you agree", "photo") %>%
+  str_replace("\\:", "") %>%
+  str_replace("-", "") %>%
+  str_replace_all(" ", "_") %>%
+  tolower()
 
 # Wide to long ------------------------------------------------------
 
