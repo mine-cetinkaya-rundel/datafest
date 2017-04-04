@@ -55,7 +55,7 @@ participants %>%
   distinct(team_name, .keep_all = TRUE) %>%
   count(school) %>%
   arrange(desc(n)) %>%
-    datatable(options = list(
+  datatable(options = list(
     lengthChange = FALSE
     ))
 ```
