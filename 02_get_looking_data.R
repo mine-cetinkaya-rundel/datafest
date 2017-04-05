@@ -1,8 +1,6 @@
 # Packages ----------------------------------------------------------
 library(googlesheets)
-library(readr)
-library(dplyr)
-library(tidyr)
+library(tidyverse)
 library(stringr)
 
 # Inputs ------------------------------------------------------------
