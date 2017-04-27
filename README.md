@@ -18,3 +18,7 @@ This repo contains resources for DataFest organizers. Specifically:
 
 - R scripts and R Markdown documents for parsing sign-up data collected via Google Forms.
 - R Markdown documents for communicating information to participants, consultants, and judges.
+
+## Questions / comments?
+
+Don't hesitate to send an email to [mine@stat.duke.edu](mailto:mine@stat.duke.edu) with any questions about DataFest.
